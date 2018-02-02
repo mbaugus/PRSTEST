@@ -62,7 +62,7 @@ create Table PurchaseRequest (
 	UserId int not null foreign key references [User](Id)
 )
 go
-create Table PurchaseRequestLineItems (
+create Table PurchaseRequestLineItem (
 	Id int primary key identity(1,1),
 	PurchaseRequestId int not null foreign key references PurchaseRequest(Id),
 	ProductId int not null foreign key references Product(Id),
@@ -85,11 +85,11 @@ insert into [Product] (Name, VendorPartNumber, Price, Unit, PhotoPath, VendorId,
 insert into [PurchaseRequest] (Description, Justification, DeliveryMode, Total, UserId) values
 	('I need a lot of pencils man', 'see description', 'UPS', 249.50, 1)
 
-insert into [PurchaseRequestLineItems] (PurchaseRequestId, ProductId, Quantity) values
+insert into [PurchaseRequestLineItem] (PurchaseRequestId, ProductId, Quantity) values
 	(1, 1, 10)
 
 select * from [User]
 select * from [Vendor]
 select * from [Product]
 select * from [PurchaseRequest]
-select * from [PurchaseRequestLineItems]
+select * from [PurchaseRequestLineItem]
