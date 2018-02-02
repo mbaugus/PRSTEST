@@ -59,7 +59,8 @@ create Table PurchaseRequest (
 	DeliveryMode nvarchar(25),
 	Status nvarchar(10) not null default 'NEW',
 	Total money not null,
-	UserId int not null foreign key references [User](Id)
+	UserId int not null foreign key references [User](Id),
+	Active bit not null default 1
 )
 go
 create Table PurchaseRequestLineItem (
