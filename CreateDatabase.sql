@@ -22,7 +22,7 @@ create Table [User] (
 	Phone nvarchar(12),
 	Email nvarchar(80),
 	isReviewer bit not null default 0,
-	isAdmin bit not null default 0
+	isAdmin bit not null default 0,
 	Active bit not null default 1
 )
 go
